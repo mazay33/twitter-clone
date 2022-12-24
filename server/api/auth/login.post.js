@@ -4,6 +4,7 @@ import bcrypt from "bcrypt"
 import { generateTokens, sendRefreshToken } from "~~/server/utils/jwt.js"
 import { userTransformer } from "~~/server/transformers/user.js"
 import { createRefreshToken } from "~~/server/db/resfreshTokens.js"
+import {sendError} from "h3"
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
